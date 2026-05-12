@@ -1,0 +1,99 @@
+/**
+ * Module Configuration
+ * Add new modules here to automatically create tabs in the navigation
+ * 
+ * Each module should have:
+ * - id: unique identifier (used in URL)
+ * - name: display name in the tab
+ * - path: route path (e.g., '/accounting')
+ * - icon: optional icon component or string
+ * - enabled: whether the module is active
+ */
+
+export const modules = [
+  {
+    id: 'dashboard',
+    name: 'Dashboard',
+    path: '/dashboard',
+    icon: '📊',
+    enabled: true,
+  },
+  {
+    id: 'accounting',
+    name: 'Accounting',
+    path: '/accounting',
+    icon: '💰',
+    enabled: true,
+  },
+  // Add more modules here:
+  {
+    id: 'carrier-trips',
+    name: 'Carrier Trips',
+    path: '/carrier-trips',
+    icon: '📦',
+    enabled: true,
+  },
+  {
+    id: 'invoices',
+    name: 'Invoices',
+    path: '/invoices',
+    icon: '📄',
+    enabled: true,
+  },
+  {
+    id: 'companies',
+    name: 'Companies',
+    path: '/companies',
+    icon: '🏢',
+    enabled: true,
+  },
+  {
+    id: 'carriers',
+    name: 'Trucks',
+    path: '/carriers',
+    icon: '🚚',
+    enabled: true,
+  },
+  {
+    id: 'drivers',
+    name: 'Drivers',
+    path: '/drivers',
+    icon: '👤',
+    enabled: true,
+  },
+  {
+    id: 'diesel-expenses',
+    name: 'Diesel Expenses',
+    path: '/diesel-expenses',
+    icon: '⛽',
+    enabled: true,
+  },
+  // {
+  //   id: 'sales',
+  //   name: 'Sales',
+  //   path: '/sales',
+  //   icon: '🛒',
+  //   enabled: true,
+  // },
+];
+
+/**
+ * Get enabled modules
+ */
+export function getEnabledModules() {
+  return modules.filter(module => module.enabled);
+}
+
+/**
+ * Get module by ID
+ */
+export function getModuleById(id) {
+  return modules.find(module => module.id === id);
+}
+
+/**
+ * Get module by path
+ */
+export function getModuleByPath(path) {
+  return modules.find(module => module.path === path);
+}
